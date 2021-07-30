@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:300, 400, 700");
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    font-family: "Nunito", sans-serif;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 42px;
+    margin-top: 35px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+p.errorMessage {
+    width: 220px;
+    color: #fde995;
+}
+
+small {
+    font-size: 1em;
+    line-height: 2.5em;
+    display: block;
+    color: #02784e;
+    margin-top: 12px;
+}
+p{
+    margin-bottom: 34px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 23px;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    line-height: 1em;
+    background: #ff4757;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.btn:hover {
+    transform: scale(1.05);
+}
+.btn.btn-light {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 23px;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    line-height: 1em;
+    background: #ff4757;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/*FORM SIZE*/
+
+.form {
+    position: relative;
+    width: 80vw;
+    max-width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 50px rgba(22, 40, 80, 0.2);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top-right-radius: 50px;
+    border: 1.5px outset rgba(255, 255, 255, 0.3);
+}
+.form__wrapper {
+    max-width: 100%;
+    position: absolute;
+    /*top: 54%;*/
+    max-width: 880px;
+    margin: 30vh auto 0 auto;
+    position: relative;
+    /*     position: absolute;
+        top: 50%;
+    >>>>>>> acb8428c28280b88d0f7aea5842f7084c038cc13
+        left: 50%;
+        transform: translate(-50%, -50%); */
+}
+div .form {
+    font-size: 14px;
+}
+.form__options {
+    padding: 160px 0;
+    display: flex;
+    font-size: 15px;
+    flex: 1;
+}
+.form__options > div {
+    width: 50%;
+}
+.form.slide .form__background {
+    left: 48%;
+    right: -15px;
+
+}
+.form__background {
+    position: absolute;
+    top: -3px;
+    left: -15px;
+    right: 50%;
+    bottom: -3px;
+    background-color: rgba(46, 54, 66, 0.7);
+    transition: 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+    border-radius: 24px;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-top-right-radius: 50px;
+    box-shadow: 0 10px 50px rgba(22, 40, 80, 0.2);
+    border-right: 1.5px solid rgba(245, 240, 240, 0.5);
+    border: 1.5px outset rgba(255, 255, 255, 0.3);
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+}
+.form__body {
+    position: absolute;
+    top: 24px;
+    left: -20px;
+    right: -20px;
+    bottom: 0;
+    padding: 20px 0;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    align-items: center;
+}
+form.sign-up{
+    flex-direction: column;
+    display: flex;
+    line-height: unset;
+}
+
+input#log_username, input#password{
+    margin-top: 24px;
+}
+input.btn.btn-light{
+    margin-top: 33px;
+    margin-bottom: 81px;
+}
+div.input-field{
+    margin-bottom: 3px;
+}
+
+input#signup.btn.btn-light {
+    margin-bottom: 33px;
+    margin-top: 3px;
+    padding: 15px 21px;
+    width: 175px;
+    line-height: unset;
+}
+
+.form__body form {
+    pointer-events: all;
+    /*margin: 99px 0;*/
+    transition: opacity 0.2s;
+    flex-direction: column;
+    display: flex;
+    line-height: unset;
+    justify-content:center;
+}
+.form__body form h2 {
+    margin-top: 24px;
+    color: white;
+    font-size: 2.5rem;
+    margin-block-start: 0;
+}
+
+
+.form__body form label {
+    display: block;
+    color: white;
+    line-height: 1.5em;
+    font-weight: 300;
+    margin-top: 3px;
+}
+.form__body form input[type=text], .form__body form input[type=password], .form__body form input[type=email] {
+    padding: 8px;
+    border: 0;
+    border-radius: 5px;
+}
+.form form:first-child {
+    opacity: 1;
+    visibility: visible;
+    /*transition-delay: 0.4s;*/
+}
+.form.slide form:first-child {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0.4s;
+}
+.form form:last-child {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 0.4s;
+}
+.form.slide form:last-child {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.4s;
+}
+p.errorMessage{
+    margin: 3px;
+    width: 190px;
+    font-size: 12px;
+}
+
+
+/*PASSWORD CHECK CSS*/
+
+.loginspan {
+    width: 100%;
+    display: flex;
+    margin: 20px 0 0 0;
+    font-family: 'Poppins';
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    align-items: center
+}
+
+.fa, .fas, .fab {
+    margin-right: 15px;
+}
+
+.loginSvg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: auto;
+    /*     background-size: 100% 100%;
+        right: 0;
+        bottom: 0; */
+}
+
+.loginSvg path {
+    fill-opacity: 0;
+    stroke: #061f10;
+    stroke-width: 0.35;
+    stroke-dasharray: 6170;
+    stroke-dashoffset: 6170;
+    animation: draw 30s infinite linear;
+    animation-direction: alternate;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .form__wrapper {
+        max-width: 880px;
+    }
+}
+
+@media (min-width: 992px) {
+    httml  {
+        overflow: hidden;
+    }
+}
