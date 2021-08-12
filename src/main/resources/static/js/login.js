@@ -3,6 +3,7 @@
 let path = window.location.href;
 
 if (path.substring(path.lastIndexOf("/")) === "/signup") {
+    console.log(path.substring(path.lastIndexOf("/")) === "/signup");
     toggle();
 }
 
@@ -10,7 +11,7 @@ function toggle() {
     document.querySelector('.form').classList.toggle('slide');
 }
 
-var check = function() {
+let check = function() {
     if (document.getElementById('createPassword').value ===
         document.getElementById('confirmCreatePassword').value) {
         document.getElementById('alertPasswordSign').style.color = '#8CC63E';

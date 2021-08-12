@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head th:replace="fragments/head :: head">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
 </head>
 <body>
 <nav></nav>
@@ -47,7 +47,7 @@
                         <input type="submit" class="btn btn-light" value="Login" name="login">
                     </form>
 
-                    <form th:action="@{/signup}" method="POST" class="sign-up" th:object="${user}" name="myform">
+                    <form th:action="@{/signup}" method="POST" class="sign-up" th:object="${user}" name="signupForm">
                         <h2>Sign Up!</h2>
                         <div class="input-field">
                             <input type="text" id="username" name="username" th:field="*{username}">
