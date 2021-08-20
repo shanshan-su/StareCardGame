@@ -35,6 +35,13 @@ public class User {
         this.password = password;
     }
 
+    public User(User copy) {
+        id = copy.id;
+        username = copy.username;
+        email = copy.email;
+        password = copy.password;
+    }
+
     public User(long id, String username, String email, String password, long wins, long loses) {
         this.id = id;
         this.username = username;

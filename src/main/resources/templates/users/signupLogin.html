@@ -50,23 +50,23 @@
                     <form th:action="@{/signup}" method="POST" class="sign-up" th:object="${user}" name="signupForm">
                         <h2>Sign Up!</h2>
                         <div class="input-field">
-                            <input type="text" id="username" name="username" th:field="*{username}">
                             <label for="username">Username</label>
+                            <input type="text" id="username" name="username" th:field="*{username}">
                             <p class="errorMessage" th:text="${message}"></p>
                         </div>
                         <div class="input-field">
-                            <input type="email" id="create_email" name="create_email" th:field="*{email}">
                             <label for="create_email">Email Address</label>
+                            <input type="email" id="create_email" name="create_email" th:field="*{email}">
                             <p class="errorMessage" th:text="${emailMessage}"></p>
                         </div>
                         <div class="input-field">
-                            <input type="password" id="createPassword" name="createPassword" th:field="*{password}">
                             <label for="createPassword">Password</label>
+                            <input type="password" id="createPassword" name="createPassword" th:field="*{password}">
                             <p class="errorMessage" th:text="${passwordMessage}"></p>
                         </div>
                         <div class="input-field">
-                            <input type="password" id="confirmCreatePassword" name="confirmCreatePassword" onkeyup='check()'>
                             <label for="confirmCreatePassword">Confirm Password</label>
+                            <input type="password" id="confirmCreatePassword" name="confirmCreatePassword" onkeyup='check()'>
                             <p id="alertPasswordSign" th:text="${passwordNotMatch}"></p>
                         </div>
 
