@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-    private UserDetailsLoader userDetailsLoader;
+    private final UserDetailsLoader userDetailsLoader;
 
     public SecurityConfiguration(UserDetailsLoader userDetailsLoader) {
         this.userDetailsLoader = userDetailsLoader;
@@ -55,7 +55,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         "/profile", // only authenticated users can see profile
                         "/profile/edit", // only authenticated users can edit profile
-                        "/play" // only authenticated users can play game
+                        "/two-people-game/play", // only authenticated users can play game
+                        "/thee-people-game/play"
                 )
                 .authenticated()
         ;

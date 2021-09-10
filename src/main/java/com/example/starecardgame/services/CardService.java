@@ -3,6 +3,7 @@ package com.example.starecardgame.services;
 import com.example.starecardgame.daos.CardsRepository;
 import com.example.starecardgame.models.Card;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.ListUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +18,7 @@ public class CardService {
         this.cardsDao = cardsDao;
     }
 
-    public List<List<Card>> givePlayersCards (){
+    public List<List<Card>> dealCardsWith2players() {
         // get the cards from db and shuffle
         List<Card> cardDeck = cardsDao.findAll();
         Collections.shuffle(cardDeck);
@@ -40,6 +41,48 @@ public class CardService {
         return new ArrayList<>(Arrays.asList(
                 playerCardsDeck1, playerCardsDeck2, cardDeck
         ));
-
     }
+
+    public List<List<Card>> dealCardsWith3players() {
+        // get the cards from db and shuffle
+        List<Card> cardDeck = cardsDao.findAll();
+        cardDeck.addAll(cardsDao.findAll());
+        Collections.shuffle(cardDeck);
+        System.out.println("cardDeck.size() = " + cardDeck.size());
+
+        List<Card> playerCardsDeck1 = new ArrayList<>();
+        List<Card> playerCardsDeck2 = new ArrayList<>();
+        List<Card> playerCardsDeck3 = new ArrayList<>();
+
+        // pass 6 cards to player1 and 5 cards to player2 and player3 and remove the 16 cards from cardDeck
+        for (int i = 15; i >= 0; i--) {
+            if (i % 3 == 0) {
+                playerCardsDeck1.add(cardDeck.get(i));
+            } else if (i % 3 == 1) {
+                playerCardsDeck2.add(cardDeck.get(i));
+            } else {
+                playerCardsDeck3.add(cardDeck.get(i));
+            }
+            cardDeck.remove(i);
+        }
+
+        return new ArrayList<>(Arrays.asList(
+                playerCardsDeck1, playerCardsDeck2, playerCardsDeck3, cardDeck
+        ));
+    }
+
+    public List<List<Card>> playOneRound(List<Card> playedCards, List<Card> player1Cards, List<Card> player2Cards, List<Card> cardDeck) {
+        // player1 plays a card(number), two same cards(two same number) or 3 cards(like 3, 4, 5) and player2 can follow with a card(number + 1), two same cards(two number + 1) or 3 cards (like 4, 5, 6), otherwise, pass
+
+
+        return new ArrayList<>(Arrays.asList(
+                player1Cards, player2Cards, cardDeck
+        ));
+    }
+
+
+
+
+
+
 }
