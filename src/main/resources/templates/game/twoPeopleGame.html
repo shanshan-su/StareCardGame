@@ -8,19 +8,24 @@
 
 <div>
     Player1
-    <div th:each="card : ${player1Cards}">
-        <p th:text="${card.getCardName()}"></p>
-    </div>
+    <form action="/two-people-game/play" method="post">
+        <div th:each="card : ${player1Cards}">
+            <input type="checkbox" id="card" name="playedCard" th:value="${card.getCardName()}">
+            <label for="card" th:text="${card.getCardName()}"></label>
+        </div>
+        <button type="submit">Play</button>
+    </form>
+
 </div>
 <div>
     cardDeck
-    <div th:each="card : ${cardDeck}" th:text="${card.getCardName()}">
-    </div>
+    <div th:each="card : ${cardDeck}" th:text="${card.getCardName()}"></div>
 </div>
 <div>
     Player2
     <div th:each="card : ${player2Cards}">
         <p th:text="${card.getCardName()}"></p>
+        <img th:src="${card.getImgUrl()}" alt="card">
     </div>
 </div>
 <!--<form action="/two-people-game/play" method="post">-->

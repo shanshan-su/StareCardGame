@@ -92,11 +92,7 @@ p{
     max-width: 880px;
     margin: 30vh auto 0 auto;
     position: relative;
-    /*     position: absolute;
-        top: 50%;
-    >>>>>>> acb8428c28280b88d0f7aea5842f7084c038cc13
-        left: 50%;
-        transform: translate(-50%, -50%); */
+
 }
 div .form {
     font-size: 14px;
@@ -254,9 +250,6 @@ p.errorMessage{
     left: 0;
     z-index: -1;
     overflow: auto;
-    /*     background-size: 100% 100%;
-        right: 0;
-        bottom: 0; */
 }
 
 .loginSvg path {

@@ -42,13 +42,14 @@ public class GameControllerWith2Players {
     }
 
     @PostMapping("/two-people-game/play")
-    public String playCard(Model model) {
+    public String playCard(String playedCards, List<Card> player1Cards, List<Card> player2Cards, List<Card> cardDeck, Model model) {
         // player1 plays a card(number), two same cards(two same number) or 3 cards(like 3, 4, 5) and player2 can follow with a card(number + 1), two same cards(two number + 1) or 3 cards (like 4, 5, 6), otherwise, pass
-
+        List<Card> playedCardsList = cardService.playOneHand(playedCards, player1Cards).get(0);
+        player1Cards = cardService.playOneHand(playedCards, player1Cards).get(1);
 
 
         model.addAttribute("title", "Two People Game");
-//        model.addAttribute("player1Cards", player1Cards);
+        model.addAttribute("player1Cards", player1Cards);
 //        model.addAttribute("player2Cards", player2Cards);
 //        model.addAttribute("cardDeck", cardDeck);
 
