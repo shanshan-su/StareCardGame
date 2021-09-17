@@ -71,12 +71,10 @@ public class CardService {
         ));
     }
 
-    public List<List<Card>> playOneHand(String playedCards, List<Card> player1Cards) {
+    public List<List<Card>> playOneHand(List<String> playedCards, List<Card> player1Cards) {
         // player1 plays a card(number), two same cards(two same number) or 3 cards(like 3, 4, 5) and player2 can follow with a card(number + 1), two same cards(two number + 1) or 3 cards (like 4, 5, 6), otherwise, pass
-        String[] playedCardsArr = playedCards.split(",");
         List<Card> playedCardsList = new ArrayList<>();
-
-        for (String playedCard : playedCardsArr) {
+        for (String playedCard : playedCards) {
             playedCardsList.add(cardsDao.getByCardName(playedCard));
 
             player1Cards.remove(cardsDao.getByCardName(playedCard));
